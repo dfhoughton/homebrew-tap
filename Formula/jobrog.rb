@@ -1,8 +1,16 @@
 class Jobrog < Formula
   desc "Command-line time tracking and note taking utility"
   homepage "https://github.com/dfhoughton/jobrog"
-  url "https://github.com/dfhoughton/jobrog/archive/2d07a77431e87cad0712a27552ff775fc2906eb1.tar.gz"
-  sha256 "3aae3164ff1fc9f84a94d70839c42085d32cc55a99298d58499f638ee4580299"
+  url "https://github.com/dfhoughton/jobrog/archive/0.1.4.tar.gz"
+  version "0.1.4"
+  sha256 "64b81d8f7f43b3acfe5cb6d180163ddc2dc6fd01055ccb5f68ccd67a4712de49"
+  version_scheme 1
+
+  bottle do
+    root_url "https://dl.bintray.com/dfhoughton/bottles-tap"
+    cellar :any_skip_relocation
+    sha256 "3df6b831edec4c081bf512792b0056c2e0278ce32d1a5b1a420b61936975501f" => :catalina
+  end
 
   depends_on "rust" => :build
 
@@ -11,9 +19,14 @@ class Jobrog < Formula
   end
 
   test do
-    system bin, "--directory", "test", "add", "testing", "jobrog"
-    system bin, "--directory", "test", "done"
-    output = shell_output "#{bin} --directory test summary"
+    # color codes mess with the test
+    system bin/"job", "-d", "test", "configure", "--color", "false"
+    system bin/"job", "-d", "test", "configure", "--precision", "0"
+    # create a greppable record
+    system bin/"job", "-d", "test", "add", "testing", "jobrog"
+    # with a time which will be 0
+    system bin/"job", "-d", "test", "done"
+    output = shell_output "#{bin}/job -d test summary"
     assert_match /0\s+testing jobrog/, output
   end
 end
