@@ -2,15 +2,13 @@ class Jobrog < Formula
   desc "Command-line time tracking and note taking utility"
   homepage "https://github.com/dfhoughton/jobrog"
   url "https://github.com/dfhoughton/jobrog/archive/0.1.4.tar.gz"
-  version "0.1.4"
   sha256 "64b81d8f7f43b3acfe5cb6d180163ddc2dc6fd01055ccb5f68ccd67a4712de49"
-  version_scheme 1
 
   bottle do
     root_url "https://dl.bintray.com/dfhoughton/bottles-tap"
     cellar :any_skip_relocation
-    rebuild 1
-    sha256 "16a499bd98410c248df320be140cb870a6a95a13231eac2223ac2cd363d645aa" => :catalina
+    rebuild 2
+    sha256 "fa3c12746d5241b28dcdb03791fa62e63df2cda62ced9de2cd4e0f924345b37f" => :catalina
   end
 
   depends_on "rust" => :build
