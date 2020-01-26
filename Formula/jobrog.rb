@@ -9,7 +9,8 @@ class Jobrog < Formula
   bottle do
     root_url "https://dl.bintray.com/dfhoughton/bottles-tap"
     cellar :any_skip_relocation
-    sha256 "3df6b831edec4c081bf512792b0056c2e0278ce32d1a5b1a420b61936975501f" => :catalina
+    rebuild 1
+    sha256 "16a499bd98410c248df320be140cb870a6a95a13231eac2223ac2cd363d645aa" => :catalina
   end
 
   depends_on "rust" => :build
