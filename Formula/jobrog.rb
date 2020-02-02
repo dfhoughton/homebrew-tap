@@ -10,6 +10,7 @@ class Jobrog < Formula
     cellar :any_skip_relocation
     rebuild 3
     sha256 "42b3fd3b4aebef485f1e9fa9231ac9f081c3cf33c26a281c2cfe30c919cd67f3" => :catalina
+    sha256 "bec3499431e0bae9634d1732a9d4e2e94d0e6c8db33875134fa2789c74228002" => :mojave
   end
 
   depends_on "rust" => :build
