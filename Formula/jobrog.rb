@@ -1,7 +1,7 @@
 class Jobrog < Formula
   desc "Command-line time tracking and note taking utility"
   homepage "https://github.com/dfhoughton/jobrog"
-  version 0.2.1.1
+  version "0.2.1.1"
   url "https://github.com/dfhoughton/jobrog/archive/0.2.1.tar.gz"
   sha256 "38d0448ff25d3af639a21beb3263ea0c60c2df26b11bea1d70c9a88203ee3631"
 
