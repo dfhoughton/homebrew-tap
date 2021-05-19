@@ -7,8 +7,7 @@ class Jobrog < Formula
 
   bottle do
     root_url "https://dl.bintray.com/dfhoughton/bottles-tap"
-    cellar :any_skip_relocation
-    sha256 "ed8979b793d03f9313edd40afbfc929bfec626a47242f6404d02794348932d6b" => :catalina
+    sha256 cellar: :any_skip_relocation, catalina: "ed8979b793d03f9313edd40afbfc929bfec626a47242f6404d02794348932d6b"
   end
 
   depends_on "rust" => :build
@@ -26,6 +25,6 @@ class Jobrog < Formula
     # with a time which will be 0
     system bin/"job", "-d", "test", "done"
     output = shell_output "#{bin}/job -d test summary"
-    assert_match /0\s+testing jobrog/, output
+    assert_match(/0\s+testing jobrog/, output)
   end
 end
