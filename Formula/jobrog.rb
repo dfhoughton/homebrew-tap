@@ -3,9 +3,7 @@ class Jobrog < Formula
   homepage "https://github.com/dfhoughton/jobrog"
   url "https://github.com/dfhoughton/jobrog/archive/1.0.2.tar.gz"
   sha256 "1af0c8b66da09b1c12aaab745a62c2ddfa07333fbada67d0fc0183dbdc863b8b"
-
-  bottle do
-  end
+  revision 3
 
   depends_on "rust" => :build
 
