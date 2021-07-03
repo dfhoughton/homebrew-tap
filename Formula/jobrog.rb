@@ -3,11 +3,11 @@ class Jobrog < Formula
   homepage "https://github.com/dfhoughton/jobrog"
   url "https://github.com/dfhoughton/jobrog/archive/1.0.2.tar.gz"
   sha256 "1af0c8b66da09b1c12aaab745a62c2ddfa07333fbada67d0fc0183dbdc863b8b"
-  revision 2
 
   bottle do
     root_url "https://dl.bintray.com/dfhoughton/bottles-tap"
-    sha256 cellar: :any_skip_relocation, catalina: "ed8979b793d03f9313edd40afbfc929bfec626a47242f6404d02794348932d6b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, catalina: "1ccad86d90f6f71ffce4b415dc161b11470a88a67aa705f327e0057ac1df0948"
   end
 
   depends_on "rust" => :build
